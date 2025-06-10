@@ -5,51 +5,8 @@ import math
 from statsmodels.stats.multitest import multipletests
 import sys
 
-# Metadata (You already have this in your environment)
-#OUT = "choline_results.csv"
-#treat = 'choDep'
-#metadata = pd.DataFrame({
-#    'sample_id': ['NCV9', 'NCV11', 'NCV67', 'NCV69', 'NCV79', 'NCV81'],
-#    'strain': ['NF54', 'NF54', 'NF54', 'NF54', 'NF54', 'NF54'],
-#    'treatment': ['Ctl', 'choDep', 'Ctl', 'choDep', 'Ctl', 'choDep'],
-#    'experiment_number': [1, 1, 2, 2, 3, 3]
-#})
-# Load the data
-#fold_change_data = pd.read_csv('./HChromatine.csv')
-#OUT = "dha_results.csv"
-#treat = 'DHA'
-#metadata = pd.DataFrame({
-#    'sample_id': ['ETF33', 'ETF34', 'NCV77', 'NCV75', 'NCV79', 'NCV83'],
-#    'strain': ['NF54', 'NF54', 'NF54', 'NF54', 'NF54', 'NF54'],
-#    'treatment': ['Ctl', 'DHA', 'Ctl', 'DHA', 'Ctl', 'DHA'],
-#    'experiment_number': [1, 1, 2, 2, 3, 3]
-#})
-#fold_change_data = pd.read_csv('./DHA_HC_quant.csv')
 
-#OUT = "hs_results.csv"
-#treat = 'HS'
-#metadata = pd.DataFrame({
-#    'sample_id': ['ETF100', 'ETF102', 'ETF108', 'ETF110'],
-#    'strain': ['NF54', 'NF54', 'NF54', 'NF54'],
-#    'treatment': ['Ctl', 'HS', 'Ctl', 'HS'],
-#    'experiment_number': [1, 1, 2, 2]
-#})
-#fold_change_data = pd.read_csv('./HS_HC_quant.csv')
-
-
-##############################################################################################################################################
-
-#OUT = "/PROJECTES/MALARIA_EPIGENETICS/Projects/ReCHIP_GDV1_Project_ene25/DiffHC/NF54_+-DHA/NF54_+-cho_results_new.csv"
-#treat = 'DHA'
-#metadata = pd.DataFrame({
-#    'sample_id': ['Coverage_NF54_+cho_-DHA_rep3', 'Coverage_NF54-DHA', 'Coverage_NF54+DHA','Coverage_NF54_-DHA_rep2', 'Coverage_NF54_+DHA_rep2', 'Coverage_NF54_+DHA_rep3'],
-#    'strain': ['NF54', 'NF54', 'NF54', 'NF54', 'NF54', 'NF54'],
-#    'treatment': ['Ctl', 'Ctl', 'DHA', 'Ctl', 'DHA', 'DHA'],
-#    'experiment_number': [3, 1, 1, 2, 2, 3]
-#})
-#fold_change_data = pd.read_csv('/PROJECTES/MALARIA_EPIGENETICS/Projects/ReCHIP_GDV1_Project_ene25/DiffHC/NF54_+-DHA/genomewise.csv')
-
-###########################################################################################################################################3
+###########################################################################################################################################
 OUT = "/PROJECTES/MALARIA_EPIGENETICS/Projects/ReCHIP_GDV1_Project_ene25/New_DiffHC/transgenicVSwt/M-T6vsNF54/M-T6vsNF54_results.csv"
 fold_change_data = pd.read_csv('/PROJECTES/MALARIA_EPIGENETICS/Projects/ReCHIP_GDV1_Project_ene25/New_DiffHC/transgenicVSwt/M-T6vsNF54/genomewise.csv')
 wt = 'NF54'
