@@ -1,0 +1,181 @@
+###################################################################
+###           Gene-Wise Coverage Pipeline: by Lucas MT          ###
+###################################################################
+
+# Fill in this form to run the pipeline. Lines starting with ">"
+# denote entries to fill (parameters). Entries must be written one per line.
+# All entries must be filled in!
+
+# Lines starting with '#' are for comments, they won't affect the script.
+# Empty lines won't affect the script either.
+
+########################### Inputs ################################
+
+# Reference genome annotations in '.gff' format
+>Ref_Gff
+/PROJECTES/MALARIA_EPIGENETICS/ChIP_Seqs/BENndGLEN_quantification/PlasmoDB-67_Pfalciparum3D7_BENndGLENndGDV1locus.gff
+
+# Reference genome sequence in '.fasta' format
+>Ref_Fa
+/PROJECTES/MALARIA_EPIGENETICS/Scripts/Pipelines/Pipeline_Genewise_Coverage/Data/BENndGLEN/PlasmoDB-67_Pfalciparum3D7_Genome.fasta
+
+##### Sample files: as always, remeber to maintain the same order for the different files of the same samples!
+
+# Coverage files dir
+>Cov_dir
+/PROJECTES/MALARIA_EPIGENETICS/ChIP_Seqs/BENndGLEN_quantification/Tracks_norm_Input_ReNorm/
+
+# Coverage files
+>Cov_files
+ETF10_NF54_38_-cho_me3_q5_sort_noDup_normInput.bdg
+ETF33_NCV30_NF54-DHA_IP_q5_sort_noDup_normInput.bdg
+ETF34_NCV32_NF54+DHA_IP_q5_sort_noDup_normInput.bdg
+ETF3_NF54_10_+cho_me3_q5_sort_noDup_normInput.bdg
+ETF43_L11F_plus_IP_q5_sort_noDup_normInput.bdg
+ETF45_L11F_min_IP_q5_sort_noDup_normInput.bdg
+ETF47_M-T6+cho_IP_q5_sort_normInput.bdg
+ETF4_NF54_10-15hpi-cho_IP_q5_sort_noDup_normInput_MERGED.bdg
+ETF50_M-T6-cho_IP_q5_sort_normInput.bdg
+ETF5_23hpi_+cho_IP_q5_sort_noDup_normInput_MERGED.bdg
+ETF60_A7_+cho_r2_IP_q5_sort_noDup_normInput.bdg
+ETF6_23hpi_-cho_IP_q5_sort_noDup_normInput_MERGED.bdg
+ETF62_A7_-cho_r2_IP_q5_sort_noDup_normInput.bdg
+ETF64_E5_+cho_r2_IP_q5_sort_noDup_normInput.bdg
+ETF66_E5_-cho_r2_IP_q5_sort_noDup_normInput.bdg
+ETF7_NF54_33_+cho_me3_q5_sort_noDup_normInput.bdg
+ETF8_NF54_33_-cho_me3_q5_sort_noDup_normInput.bdg
+ETF9_NF54_38_+cho_me3_q5_sort_noDup_normInput.bdg
+NCV105_1.2Bcorr_6H_+cho_rep2.bdg
+NCV107_1.2Bcorr_6H_-cho_rep2.bdg
+NCV109_1.2Bcorr_4F_+cho_rep2.bdg
+NCV111_1.2Bcorr_4F_-cho_rep2.bdg
+NCV113_KO_AS_1_+cho_me3_q5_sort_noDup_normInput.bdg
+NCV115_KO_AS_1_-cho_me3_q5_sort_noDup_normInput.bdg
+NCV117_KO_AS_3_+cho_me3_q5_sort_noDup_normInput.bdg
+NCV119_KO_AS_3_-cho_me3_q5_sort_noDup_normInput.bdg
+NCV11_NF54_-cho_rep1.bdg
+NCV121_KO_S_2_+cho_me3_q5_sort_noDup_normInput.bdg
+NCV123_KO_S_2_-cho_me3_q5_sort_noDup_normInput.bdg
+NCV125_OE_AS_3_+cho_me3_q5_sort_noDup_normInput.bdg
+NCV127_OE_AS_3_-cho_me3_q5_sort_noDup_normInput.bdg
+NCV129_MUN11_me3_+cho_q5_sort_noDup_normInput.bdg
+NCV131_MUN11_me3_-cho_q5_sort_noDup_normInput.bdg
+NCV13_E5_+cho_rep1.bdg
+NCV15_E5_-cho_rep1.bdg
+NCV17_A7_+cho_rep1.bdg
+NCV19_A7_-cho_rep1.bdg
+NCV59_pat4_+cho_rep1.bdg
+NCV63_pat12_+cho_rep1.bdg
+NCV67_NF54_+cho_rep2.bdg
+NCV69_NF54_-cho_rep2.bdg
+NCV75_NF54_+DHA_rep2.bdg
+NCV77_NF54_-DHA_rep2.bdg
+NCV79_NF54_+cho_-DHA_rep3.bdg
+NCV81_NF54_-cho_rep3.bdg
+NCV83_NF54_+DHA_rep3.bdg
+NCV87_1.2Bcorr_6H_+cho_rep1.bdg
+NCV89_1.2Bcorr_6H_-cho_rep1.bdg
+NCV91_1.2Bcorr_4F_+cho_rep1.bdg
+NCV93_1.2Bcorr_4F_-cho_rep1.bdg
+NCV9_NF54_+cho_rep1.bdg
+                                     
+
+# Sample names (for output)
+>Sample_names
+ETF10_NF54_38_-cho_me3
+ETF33_NCV30_NF54-DHA_IP
+ETF34_NCV32_NF54+DHA_IP
+ETF3_NF54_10_+cho_me3
+ETF43_L11F_plus
+ETF45_L11F_min
+ETF47_M-T6+cho
+ETF4_NF54_10-15hpi-cho
+ETF50_M-T6-cho
+ETF5_23hpi_+cho
+ETF60_A7_+cho_r2
+ETF6_23hpi_-cho
+ETF62_A7_-cho_r2
+ETF64_E5_+cho_r2
+ETF66_E5_-cho_r2
+ETF7_NF54_33_+cho_me3
+ETF8_NF54_33_-cho_me3
+ETF9_NF54_38_+cho_me3
+NCV105_1.2Bcorr_6H_+cho
+NCV107_1.2Bcorr_6H_-cho
+NCV109_1.2Bcorr_4F_+cho
+NCV111_1.2Bcorr_4F_-cho
+NCV113_KO_AS_1_+cho_me3
+NCV115_KO_AS_1_-cho_me3
+NCV117_KO_AS_3_+cho_me3
+NCV119_KO_AS_3_-cho_me3
+NCV11_NF54_-cho_rep1
+NCV121_KO_S_2_+cho_me3
+NCV123_KO_S_2_-cho_me3
+NCV125_OE_AS_3_+cho_me3
+NCV127_OE_AS_3_-cho_me3
+NCV129_MUN11_me3_+cho
+NCV131_MUN11_me3_-cho
+NCV13_E5_+cho_rep1
+NCV15_E5_-cho_rep1
+NCV17_A7_+cho_rep1
+NCV19_A7_-cho_rep1
+NCV59_pat4_+cho_rep1
+NCV63_pat12_+cho_rep1
+NCV67_NF54_+cho_rep2
+NCV69_NF54_-cho_rep2
+NCV75_NF54_+DHA_rep2
+NCV77_NF54_-DHA_rep2
+NCV79_NF54_+cho_-DHA_rep3
+NCV81_NF54_-cho_rep3
+NCV83_NF54_+DHA_rep3
+NCV87_1.2Bcorr_6H_+cho_rep1
+NCV89_1.2Bcorr_6H_-cho_rep1
+NCV91_1.2Bcorr_4F_+cho_rep1
+NCV93_1.2Bcorr_4F_-cho_rep1
+NCV9_NF54_+cho_rep1
+
+#################### Settable Parameters ##########################
+
+>Out_folder
+/PROJECTES/MALARIA_EPIGENETICS/ChIP_Seqs/BENndGLEN_quantification/GDV1asQuant/
+
+# Number of processors to use
+>Threads
+16
+
+# List (one per line) of GFF features to use for annotation
+>GeneTypes
+protein_coding_gene
+ncRNA_gene
+lncRNA
+pseudogene
+# Other non-used features: rRNA, snoRNA, snRNA, tRNA, ncRNA
+
+# Number of bp from the upstream 5' regulatory regions to consider when calculating coverage (counted from the TSS)
+>Overlap_5p
+1000
+
+# Number of bp from the coding sequence to consider when calculating coverage
+>Overlap_cds
+500
+
+############################ Steps ################################
+
+# Define which steps of the pipeline to run. Set each entriy to
+# 'yes' or 'no'. Useful if the pipeline fails at some point and
+# has to be re-run (and you don't want to re-run all steps).
+
+# Generate a new reference for gene-wise annotation
+>Run_BuildReference
+no
+
+>Run_BuildBedOverlap
+no
+
+>Run_CrossCoverage
+yes
+
+>Run_MakeTable
+yes
+
+
